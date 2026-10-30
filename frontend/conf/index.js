@@ -1,7 +1,7 @@
 
 const config = {
-    backendEndpoint: "http://15.206.194.179:8082",
-  };
+  backendEndpoint: "https://qtrip-dynamic-backend-ikih.onrender.com",
+};
   
   export default config;
   
