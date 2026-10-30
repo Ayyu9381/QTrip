@@ -20,7 +20,8 @@ async function init() {
   // TODO: MODULE_CITIES
   // Fetch cities using the Backend API and return the data
   try {
-    const response = await fetch(`${config.backendEndpoint}/cities`);
+    const endpoint = config.backendEndpoint.replace(/\/+$/, "");
+    const response = await fetch(`${endpoint}/cities`);
 
     if (!response.ok) {
       return null;

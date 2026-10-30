@@ -3,8 +3,9 @@ import config from "../conf/index.js";
 // Implementation of fetch call to fetch all reservations
 async function fetchReservations() {
   try {
+    const endpoint = config.backendEndpoint.replace(/\/+$/, "");
     const response = await fetch(
-      `${config.backendEndpoint}/reservations`
+      `${endpoint}/reservations`
     );
 
     if (!response.ok) {

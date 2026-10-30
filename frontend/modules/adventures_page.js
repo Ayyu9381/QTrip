@@ -9,8 +9,9 @@ function getCityFromURL(search) {
 // Fetch adventures for the given city
 async function fetchAdventures(city) {
   try {
+    const endpoint = config.backendEndpoint.replace(/\/+$/, "");
     const response = await fetch(
-      `${config.backendEndpoint}/adventures?city=${encodeURIComponent(city)}`
+      `${endpoint}/adventures?city=${encodeURIComponent(city)}`
     );
 
     if (!response.ok) {

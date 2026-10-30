@@ -11,8 +11,9 @@ function getAdventureIdFromURL(search) {
 
 async function fetchAdventureDetails(adventureId) {
   try {
+    const endpoint = config.backendEndpoint.replace(/\/+$/, "");
     const response = await fetch(
-      `${config.backendEndpoint}/adventures/detail?adventure=${encodeURIComponent(adventureId)}`
+      `${endpoint}/adventures/detail?adventure=${encodeURIComponent(adventureId)}`
     );
 
     if (!response.ok) {
@@ -153,8 +154,9 @@ function captureFormSubmit(adventure) {
     const persons = form.elements.namedItem("person").value;
 
     try {
+      const endpoint = config.backendEndpoint.replace(/\/+$/, "");
       const response = await fetch(
-        `${config.backendEndpoint}/reservations/new`,
+        `${endpoint}/reservations/new`,
         {
           method: "POST",
           headers: {
